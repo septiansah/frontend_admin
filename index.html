@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 	<meta charset="utf-8">
@@ -7,268 +8,385 @@
 	<meta name="author" content="Isna Nur Azis">
 	<meta name="keyword" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Miminium</title>
+	<title>Miminium</title>
 
-    <!-- start: Css -->
-    <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+	<!-- start: Css -->
+	<link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
 
-      <!-- plugins -->
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/fullcalendar.min.css"/>
+	<!-- plugins -->
+	<link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css" />
+	<link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css" />
+	<link rel="stylesheet" type="text/css" href="asset/css/plugins/fullcalendar.min.css" />
 	<link href="asset/css/style.css" rel="stylesheet">
-  <link href="asset/css/custom.css" rel="stylesheet">
+	<link href="asset/css/custom.css" rel="stylesheet">
 	<!-- end: Css -->
 
 	<link rel="shortcut icon" href="asset/img/logomi.png">
-  </head>
+	<style media="screen">
+		body,
+		html {
+			height: 100%;
+		}
 
- <body id="mimin" class="dashboard">
-      <!-- start: Header -->
-        <nav class="navbar navbar-default header navbar-fixed-top">
-          <div class="col-md-12 nav-wrapper">
-            <div class="navbar-header" style="width:100%;">
-              <div class="opener-left-menu is-open">
-                <span class="top"></span>
-                <span class="middle"></span>
-                <span class="bottom"></span>
-              </div>
-                <a href="index.html" class="navbar-brand">
+		nav.sidebar,
+		.main {
+			-webkit-transition: margin 200ms ease-out;
+			-moz-transition: margin 200ms ease-out;
+			-o-transition: margin 200ms ease-out;
+			transition: margin 200ms ease-out;
+		}
+
+		.main {
+			padding: 10px 10px 0 10px;
+		}
+
+		@media (min-width: 765px) {
+
+			.main {
+				position: absolute;
+				width: calc(100% - 40px);
+				margin-left: 40px;
+				float: right;
+			}
+
+			nav.sidebar:hover+.main {
+				margin-left: 200px;
+			}
+
+			nav.sidebar.navbar.sidebar>.container .navbar-brand,
+			.navbar>.container-fluid .navbar-brand {
+				margin-left: 0px;
+			}
+
+			nav.sidebar .navbar-brand,
+			nav.sidebar .navbar-header {
+				text-align: center;
+				width: 100%;
+				margin-left: 0px;
+			}
+
+			nav.sidebar a {
+				padding-right: 13px;
+			}
+
+			nav.sidebar .navbar-nav>li:first-child {
+				border-top: 1px #e5e5e5 solid;
+			}
+
+			nav.sidebar .navbar-nav>li {
+				border-bottom: 1px #e5e5e5 solid;
+			}
+
+			nav.sidebar .navbar-nav .open .dropdown-menu {
+				position: static;
+				float: none;
+				width: auto;
+				margin-top: 0;
+				background-color: transparent;
+				border: 0;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+
+			nav.sidebar .navbar-collapse,
+			nav.sidebar .container-fluid {
+				padding: 0 0px 0 0px;
+			}
+
+			.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+				color: #777;
+			}
+
+			nav.sidebar {
+				width: 200px;
+				height: 100%;
+				margin-left: -160px;
+				float: left;
+				margin-bottom: 0px;
+			}
+
+			nav.sidebar li {
+				width: 100%;
+			}
+
+			nav.sidebar:hover {
+				margin-left: 0px;
+			}
+
+			.forAnimate {
+				opacity: 0;
+			}
+		}
+
+		@media (min-width: 1330px) {
+
+			.main {
+				width: calc(100% - 200px);
+				margin-left: 200px;
+			}
+
+			nav.sidebar {
+				margin-left: 0px;
+				float: left;
+			}
+
+			nav.sidebar .forAnimate {
+				opacity: 1;
+			}
+		}
+
+		nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover,
+		nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+			color: #CCC;
+			background-color: transparent;
+		}
+
+		nav:hover .forAnimate {
+			opacity: 1;
+		}
+
+		section {
+			padding-left: 15px;
+		}
+	</style>
+</head>
+
+<body id="mimin" class="dashboard">
+	<!-- start: Header -->
+	<nav class="navbar navbar-default header navbar-fixed-top">
+		<div class="col-md-12 nav-wrapper">
+			<div class="navbar-header" style="width:100%;">
+				<div class="opener-left-menu is-open">
+					<span class="top"></span>
+					<span class="middle"></span>
+					<span class="bottom"></span>
+				</div>
+				<a href="index.html" class="navbar-brand">
                  <b>ADMIN</b>
                 </a>
 
-              <ul class="nav navbar-nav search-nav">
-                <li>
-                </li>
-              </ul>
+				<ul class="nav navbar-nav search-nav">
+					<li>
+					</li>
+				</ul>
 
-              <ul class="nav navbar-nav navbar-right user-nav">
-                <li class="user-name"><span>Admin</span></li>
-                  <li class="dropdown avatar-dropdown">
-                   <img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
-                   <ul class="dropdown-menu user-dropdown">
-                     <li><a href="#"><span class="fa fa-user"></span> My Profile</a></li>
-                     <li><a href="#"><span class="fa fa-calendar"></span> My Calendar</a></li>
-                     <li role="separator" class="divider"></li>
-                     <li class="more">
-                      <ul>
-                        <li><a href=""><span class="fa fa-cogs"></span></a></li>
-                        <li><a href=""><span class="fa fa-lock"></span></a></li>
-                        <li><a href=""><span class="fa fa-power-off "></span></a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      <!-- end: Header -->
+				<ul class="nav navbar-nav navbar-right user-nav">
+					<li class="user-name"><span>Admin</span></li>
+					<li class="dropdown avatar-dropdown">
+						<img src="asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" />
+						<ul class="dropdown-menu user-dropdown">
+							<li><a href="#"><span class="fa fa-user"></span> My Profile</a></li>
+							<li><a href="#"><span class="fa fa-calendar"></span> My Calendar</a></li>
+							<li role="separator" class="divider"></li>
+							<li class="more">
+								<ul>
+									<li><a href=""><span class="fa fa-cogs"></span></a></li>
+									<li><a href=""><span class="fa fa-lock"></span></a></li>
+									<li><a href=""><span class="fa fa-power-off "></span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- end: Header -->
 
-      <div class="container-fluid mimin-wrapper">
+	<div class="container-fluid mimin-wrapper">
 
-          <!-- start:Left Menu -->
-            <div id="left-menu">
-              <div class="sub-left-menu scroll">
-                <ul class="nav nav-list">
-                    <li><div class="left-bg"></div></li>
-                    <li class="time">
-                      <h1 class="animated fadeInLeft">21:00</h1>
-                      <p class="animated fadeInRight">Sat,October 1st 2029</p>
-                    </li>
-                    <li class="active ripple">
-                      <a class="tree-toggle nav-header"><span class="fa fa-dashboard"></span> Dashboard
-                      </a>
-                    </li>
-                    <li class="ripple">
-                      <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Home
-                        <span class="fa-angle-right fa right-arrow text-right"></span>
-                      </a>
-                      <ul class="nav nav-list tree">
-                          <li><a href="slider.html">Slider</a></li>
-                      </ul>
-                    </li>
-                    <li class="ripple">
-                      <a class="tree-toggle nav-header">
-                        <span class="icons icon-tag"></span> Product
-                        <span class="fa-angle-right fa right-arrow text-right"></span>
-                      </a>
-                      <ul class="nav nav-list tree">
-                        <li><a href="#">Puri 1</a></li>
-                        <li><a href="#">puri 2</a></li>
-                        <li><a href="#">puri 3</a></li>
-                        <li><a href="#">puri 4</a></li>
-                      </ul>
-                    </li>
-                    <li class="ripple">
-                      <a class="tree-toggle nav-header">
-                        <span class="icons icon-picture"></span> Fasilitas
-                        <span class="fa-angle-right fa right-arrow text-right"></span>
-                      </a>
-                      <ul class="nav nav-list tree">
-                        <li><a href="fasilitas.html">fasilitas</a></li>
-
-                      </ul>
-                    </li>
-                    <li class="ripple"><a class="tree-toggle nav-header">
-                    <span class="icons icon-wrench"></span> Spesifikasi  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
-                      <ul class="nav nav-list tree">
-                        <li><a href="color.html">Color</a></li>
-                        <li><a href="weather.html">Weather</a></li>
-                        <li><a href="typography.html">Typography</a></li>
-
-                    </li>
-									</ul>
-									</ul>
-                </div>
-            </div>
-          <!-- end: Left Menu -->
+		<!-- start:Left Menu -->
+		<div id="left-menu">
+			<div class="sub-left-menu scroll">
+				<ul class="nav nav-list">
+					<li>
+						<div class="left-bg"></div>
+					</li>
+					<li class="time">
+						<h1 class="animated fadeInLeft">21:00</h1>
+						<p class="animated fadeInRight">Sat,October 1st 2029</p>
+					</li>
+					<div id="MainMenu">
+						<div class="list-group panel">
+							<a class="list-group-item">
+								<i class="fa fa-pencil" style="padding-right:5px;"></i> Dashboard
+							</a>
+							<a href="#menu1" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">
+								<i class="fa fa-pencil" style="padding-right:5px;"></i> Home
+							</a>
+							<div class="collapse" id="menu1">
+								<a href="slider.html" class="list-group-item">Slider</a>
+							</div>
+							<a href="#menu2" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">
+								<i class="fa fa-pencil" style="padding-right:5px;"></i> Product
+							</a>
+							<div class="collapse" id="menu2">
+								<a href="" class="list-group-item">Subitem 1</a>
+								<a href="" class="list-group-item">Subitem 2</a>
+								<a href="" class="list-group-item">Subitem 3</a>
+							</div>
+							<a href="#menu3" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">
+								<i class="fa fa-pencil" style="padding-right:5px;"></i> Fasilitas
+							</a>
+							<div class="collapse" id="menu3">
+								<a href="" class="list-group-item">Subitem 1</a>
+								<a href="" class="list-group-item">Subitem 2</a>
+								<a href="" class="list-group-item">Subitem 3</a>
+							</div>
+						</div>
+					</div>
+				</ul>
+				</ul>
+			</div>
+		</div>
+		<!-- end: Left Menu -->
 
 
-          <!-- start: content -->
-          <div id="content">
-             <div class="panel box-shadow-none content-header">
-                  <div class="panel-body">
-                    <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Email Reply</h3>
-                        <p class="animated fadeInDown">
-                          Dashboard
-                        </p>
-                    </div>
-                  </div>
-              </div>
+		<!-- start: content -->
+		<div id="content">
+			<div class="panel box-shadow-none content-header">
+				<div class="panel-body">
+					<div class="col-md-12">
+						<h3 class="animated fadeInLeft">Email Reply</h3>
+						<p class="animated fadeInDown">
+							Dashboard
+						</p>
+					</div>
+				</div>
+			</div>
 
-            <div class="col-md-12 top-20 padding-0">
-              <div class="col-md-12">
-                <div class="panel">
-                  <div class="panel-body">
+			<div class="col-md-12 top-20 padding-0">
+				<div class="col-md-12">
+					<div class="panel">
+						<div class="panel-body">
 
-								 <div class="responsive-table">
+							<div class="responsive-table">
 
-									 <table class="table table-striped table-bordered" width="100%" cellspacing="0">
-									 <thead>
-										 <tr>
-											 <th width="50px">No</th>
-											 <th width="200px">Nama Pelanggan</th>
-											 <th>Pertanyaan</th>
-											 <th>email</th>
-											 <th width="200px">Action</th>
+								<table class="table table-striped table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th width="50px">No</th>
+											<th width="200px">Nama Pelanggan</th>
+											<th>Pertanyaan</th>
+											<th>email</th>
+											<th width="200px">Action</th>
 
-										 </tr>
-									 </thead>
-									 <tbody>
+										</tr>
+									</thead>
+									<tbody>
 
-										 <tr>
-											 <td>1</td>
-											 <td>....</td>
-											 <td>....</td>
-											 <td>....</td>
-											 <td>
-												 <div id="tombol">
-		                   <div class="col-md-12">
-		                     <input type="button" class=" btn btn-round btn-primary" value="Balas"/>
-		                    <input type="button" class=" btn btn-round btn-danger" value="Delete"/>
-		                   </div>
-		                   </div>
-										 </td>
+										<tr>
+											<td>1</td>
+											<td>....</td>
+											<td>....</td>
+											<td>....</td>
+											<td>
+												<div id="tombol">
+													<div class="col-md-12">
+														<input type="button" class=" btn btn-round btn-primary" value="Balas" />
+														<input type="button" class=" btn btn-round btn-danger" value="Delete" />
+													</div>
+												</div>
+											</td>
 
-										 </tr>
-									 </tbody>
-								 </table>
-								 </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-          <!-- end: content -->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end: content -->
 
 
-          <!-- start: right menu -->
-					<div id="mimin-mobile" class="reverse">
-					        <div class="mimin-mobile-menu-list">
-					            <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
-					                <ul class="nav nav-list">
-														<li class="active ripple">
-															<a class="tree-toggle nav-header"><span class="fa fa-dashboard"></span> Dashboard
+		<!-- start: right menu -->
+		<div id="mimin-mobile" class="reverse">
+			<div class="mimin-mobile-menu-list">
+				<div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+					<ul class="nav nav-list">
+						<li class="active ripple">
+							<a class="tree-toggle nav-header"><span class="fa fa-dashboard"></span> Dashboard
 
 															</a>
-														</li>
-														<li class="active ripple">
-															<a class="tree-toggle nav-header"><span class="fa-home fa"></span> Home
+						</li>
+						<li class="active ripple">
+							<a class="tree-toggle nav-header"><span class="fa-home fa"></span> Home
 																<span class="fa-angle-right fa right-arrow text-right"></span>
 															</a>
-															<ul class="nav nav-list tree">
-																	<li><a href="slider.html">Slider</a></li>
-															</ul>
-														</li>
-														<li class="ripple">
-															<a class="tree-toggle nav-header">
+							<ul class="nav nav-list tree">
+								<li><a href="slider.html">Slider</a></li>
+							</ul>
+						</li>
+						<li class="ripple">
+							<a class="tree-toggle nav-header">
 																<span class="icons icon-tag"></span> Product
 																<span class="fa-angle-right fa right-arrow text-right"></span>
 															</a>
-															<ul class="nav nav-list tree">
-																<li><a href="#">Puri 1</a></li>
-																<li><a href="#">puri 2</a></li>
-																<li><a href="#">puri 3</a></li>
-																<li><a href="#">puri 4</a></li>
-															</ul>
-														</li>
-														<li class="ripple">
-															<a class="tree-toggle nav-header">
+							<ul class="nav nav-list tree">
+								<li><a href="#">Puri 1</a></li>
+								<li><a href="#">puri 2</a></li>
+								<li><a href="#">puri 3</a></li>
+								<li><a href="#">puri 4</a></li>
+							</ul>
+						</li>
+						<li class="ripple">
+							<a class="tree-toggle nav-header">
 																<span class="icons icon-picture"></span> Fasilitas
 																<span class="fa-angle-right fa right-arrow text-right"></span>
 															</a>
-															<ul class="nav nav-list tree">
-																<li><a href="chartjs.html">ChartJs</a></li>
-																<li><a href="morris.html">Morris</a></li>
-																<li><a href="flot.html">Flot</a></li>
-																<li><a href="sparkline.html">SparkLine</a></li>
-					                          </ul>
+							<ul class="nav nav-list tree">
+								<li><a href="chartjs.html">ChartJs</a></li>
+								<li><a href="morris.html">Morris</a></li>
+								<li><a href="flot.html">Flot</a></li>
+								<li><a href="sparkline.html">SparkLine</a></li>
+							</ul>
 
-					                        </li>
-																	<li class="ripple"><a class="tree-toggle nav-header">
+						</li>
+						<li class="ripple"><a class="tree-toggle nav-header">
 																	<span class="icons icon-wrench"></span> Spesifikasi  <span class="fa-angle-right fa right-arrow text-right"></span> </a>
-																		<ul class="nav nav-list tree">
-																			<li><a href="color.html">Color</a></li>
-																			<li><a href="weather.html">Weather</a></li>
-																			<li><a href="typography.html">Typography</a></li>
-																			<li><a href="icons.html">Icons</a></li>
-																		</ul>
-																	</li>
-					                  </ul>
-					            </div>
-					        </div>
-					      </div>
-            </div>
-        </div>
-      </div>
-      <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
+							<ul class="nav nav-list tree">
+								<li><a href="color.html">Color</a></li>
+								<li><a href="weather.html">Weather</a></li>
+								<li><a href="typography.html">Typography</a></li>
+								<li><a href="icons.html">Icons</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	<button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
         <span class="fa fa-bars"></span>
       </button>
-       <!-- end: Mobile -->
+	<!-- end: Mobile -->
 
-    <!-- start: Javascript -->
-    <script src="asset/js/jquery.min.js"></script>
-    <script src="asset/js/jquery.ui.min.js"></script>
-    <script src="asset/js/bootstrap.min.js"></script>
-
-
-    <!-- plugins -->
-    <script src="asset/js/plugins/moment.min.js"></script>
-    <script src="asset/js/plugins/fullcalendar.min.js"></script>
-    <script src="asset/js/plugins/jquery.nicescroll.js"></script>
-    <script src="asset/js/plugins/jquery.vmap.min.js"></script>
-    <script src="asset/js/plugins/maps/jquery.vmap.world.js"></script>
-    <script src="asset/js/plugins/jquery.vmap.sampledata.js"></script>
-    <script src="asset/js/plugins/chart.min.js"></script>
+	<!-- start: Javascript -->
+	<script src="asset/js/jquery.min.js"></script>
+	<script src="asset/js/jquery.ui.min.js"></script>
+	<script src="asset/js/bootstrap.min.js"></script>
 
 
-    <!-- custom -->
-     <script src="asset/js/main.js"></script>
+	<!-- plugins -->
+	<script src="asset/js/plugins/moment.min.js"></script>
+	<script src="asset/js/plugins/fullcalendar.min.js"></script>
+	<script src="asset/js/plugins/jquery.nicescroll.js"></script>
+	<script src="asset/js/plugins/jquery.vmap.min.js"></script>
+	<script src="asset/js/plugins/maps/jquery.vmap.world.js"></script>
+	<script src="asset/js/plugins/jquery.vmap.sampledata.js"></script>
+	<script src="asset/js/plugins/chart.min.js"></script>
+
+
+	<!-- custom -->
+	<script src="asset/js/main.js"></script>
 
 
 
-  </body>
+</body>
+
 </html>

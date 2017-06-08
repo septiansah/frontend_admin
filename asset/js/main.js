@@ -8,8 +8,8 @@
 
             $ink = $("<span class='ink'></span>");
 
-            if ($rippler.children("a").first()) {
-                $rippler.children("a").first().append($ink);
+            if ($rippler.children("p").first()) {
+                $rippler.children("p").first().append($ink);
                 console.log("found");
             }
             else {
@@ -236,7 +236,7 @@
               top: y+'px',
               left:x+'px',
             }).addClass("animate");
-                
+
             rippler.css({'z-index':9999});
             rippler.animate({
               backgroundColor: "#FF6656",
@@ -249,7 +249,7 @@
                 $("#mimin-mobile-menu-opener span").removeClass("fa-bars").addClass("fa-close").css({"font-size":"2em"});
               });
         }else{
-            
+
                 if(rippler.find(".ink").length == 0) {
                   rippler.append("<div class='ink'></div>");
                 }
@@ -308,8 +308,8 @@
 
     $(".fileupload-v1-btn").on("click",function(){
       var wrapper = $(this).parent("span").parent("div");
-      var path    = wrapper.find($(".fileupload-v1-path"));   
-      $(".fileupload-v1-file").click();   
+      var path    = wrapper.find($(".fileupload-v1-path"));
+      $(".fileupload-v1-file").click();
       $(".fileupload-v1-file").on("change",function(){
           path.attr("placeholder",$(this).val());
           console.log(wrapper);
